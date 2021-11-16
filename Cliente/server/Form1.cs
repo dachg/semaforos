@@ -95,7 +95,6 @@ namespace server
                         trafficLights.Add(trafficLight);
                     }
                 }
-                Thread.ResetAbort();
             }
             catch (SocketException ex)
             {
