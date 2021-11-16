@@ -14,6 +14,7 @@ namespace server
         static int SERVER_PORT = 4404;
         static string IP = "localhost";
         private List<TrafficLight> trafficLights;
+
         IPHostEntry host;
         IPAddress ipAddress;
         IPEndPoint endpoint;
@@ -25,7 +26,6 @@ namespace server
         {
             trafficLights = new List<TrafficLight>();
             InitializeComponent();
-            //trafficLights.Add(new TrafficLight(4, 5, eGroups.group3, 1));
             
             dataTrafficLight.DataSource = trafficLights;
 
@@ -40,7 +40,7 @@ namespace server
             s_Server.Bind(endpoint);
             s_Server.Listen(2);
 
-            timerLight.Interval = 1000;
+            timerLight.Interval = 100;
             timerLight.Enabled = true;
             Start();
         }
@@ -107,13 +107,6 @@ namespace server
             return msg;
         }
 
-        //private void timerData_Tick(object sender, EventArgs e)
-        //{
-        //    dataTrafficLight.DataSource = trafficLights;
-        //    dataTrafficLight.Refresh();
-        //    comboClient.DataSource = clientIds;
-        //}
-
         public void SendObject(object toSend)
         {
             s_Client.Send(Serialization.Serialize(toSend));
@@ -132,7 +125,8 @@ namespace server
 
         private void timerLight_Tick(object sender, EventArgs e)
         {
-            trafficLightBindingSource.DataSource = trafficLights;
+            dataTrafficLight.DataSource = typeof(List<TrafficLight>);
+            dataTrafficLight.DataSource = trafficLights;
             dataTrafficLight.Update();
             dataTrafficLight.Refresh();
         }

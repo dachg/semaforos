@@ -38,6 +38,7 @@ namespace server
             this.comboColor = new System.Windows.Forms.ComboBox();
             this.buttonSend = new System.Windows.Forms.Button();
             this.timerLight = new System.Windows.Forms.Timer(this.components);
+            this.ClientId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numberLigthsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numberFailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +51,7 @@ namespace server
             this.dataTrafficLight.AutoGenerateColumns = false;
             this.dataTrafficLight.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataTrafficLight.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ClientId,
             this.numberLigthsDataGridViewTextBoxColumn,
             this.numberFailsDataGridViewTextBoxColumn,
             this.groupIdDataGridViewTextBoxColumn});
@@ -57,7 +59,7 @@ namespace server
             this.dataTrafficLight.Location = new System.Drawing.Point(334, 13);
             this.dataTrafficLight.Name = "dataTrafficLight";
             this.dataTrafficLight.ReadOnly = true;
-            this.dataTrafficLight.Size = new System.Drawing.Size(379, 226);
+            this.dataTrafficLight.Size = new System.Drawing.Size(444, 226);
             this.dataTrafficLight.TabIndex = 0;
             // 
             // trafficLightBindingSource
@@ -112,24 +114,31 @@ namespace server
             // 
             this.timerLight.Tick += new System.EventHandler(this.timerLight_Tick);
             // 
+            // ClientId
+            // 
+            this.ClientId.DataPropertyName = "ClientId";
+            this.ClientId.HeaderText = "Id cliente";
+            this.ClientId.Name = "ClientId";
+            this.ClientId.ReadOnly = true;
+            // 
             // numberLigthsDataGridViewTextBoxColumn
             // 
             this.numberLigthsDataGridViewTextBoxColumn.DataPropertyName = "NumberLigths";
-            this.numberLigthsDataGridViewTextBoxColumn.HeaderText = "NumberLigths";
+            this.numberLigthsDataGridViewTextBoxColumn.HeaderText = "# luces";
             this.numberLigthsDataGridViewTextBoxColumn.Name = "numberLigthsDataGridViewTextBoxColumn";
             this.numberLigthsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // numberFailsDataGridViewTextBoxColumn
             // 
             this.numberFailsDataGridViewTextBoxColumn.DataPropertyName = "NumberFails";
-            this.numberFailsDataGridViewTextBoxColumn.HeaderText = "NumberFails";
+            this.numberFailsDataGridViewTextBoxColumn.HeaderText = "# fallas";
             this.numberFailsDataGridViewTextBoxColumn.Name = "numberFailsDataGridViewTextBoxColumn";
             this.numberFailsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // groupIdDataGridViewTextBoxColumn
             // 
             this.groupIdDataGridViewTextBoxColumn.DataPropertyName = "GroupId";
-            this.groupIdDataGridViewTextBoxColumn.HeaderText = "GroupId";
+            this.groupIdDataGridViewTextBoxColumn.HeaderText = "Id grupo";
             this.groupIdDataGridViewTextBoxColumn.Name = "groupIdDataGridViewTextBoxColumn";
             this.groupIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -163,6 +172,7 @@ namespace server
         private System.Windows.Forms.ComboBox comboColor;
         private System.Windows.Forms.Button buttonSend;
         private System.Windows.Forms.Timer timerLight;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClientId;
         private System.Windows.Forms.DataGridViewTextBoxColumn numberLigthsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numberFailsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn groupIdDataGridViewTextBoxColumn;

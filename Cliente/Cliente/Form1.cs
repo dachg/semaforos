@@ -25,6 +25,8 @@ namespace Cliente
         public Form1()
         {
             InitializeComponent();
+            clientId.Focus();
+            clientId.Select();
             client = new Client(IP, SERVER_PORT);
             client.Start();
         }
