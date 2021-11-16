@@ -74,8 +74,7 @@ namespace server
 
             try
             {
-                bool connected = true;
-                while (connected)
+                while (true)
                 {
                     buffer = new byte[1024];
                     s_Client.Receive(buffer);
@@ -84,6 +83,7 @@ namespace server
                     {
 
                         SendObject(new Exception("Cliente no permitido"));
+                        continue;
                     }
                     int indexTrafficLights = trafficLights.FindIndex(x => x.ClientId == trafficLight.ClientId && x.GroupId == trafficLight.GroupId);
                     if (indexTrafficLights > -1)
