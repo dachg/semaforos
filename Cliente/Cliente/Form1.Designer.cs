@@ -46,7 +46,8 @@ namespace Cliente
             this.label6 = new System.Windows.Forms.Label();
             this.g2_amount = new System.Windows.Forms.TextBox();
             this.g2_ligth = new System.Windows.Forms.TextBox();
-            this.g2_report = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // g1_red
@@ -195,22 +196,33 @@ namespace Cliente
             this.g2_ligth.Size = new System.Drawing.Size(100, 20);
             this.g2_ligth.TabIndex = 3;
             // 
-            // g2_report
+            // button1
             // 
-            this.g2_report.Location = new System.Drawing.Point(539, 333);
-            this.g2_report.Name = "g2_report";
-            this.g2_report.Size = new System.Drawing.Size(90, 23);
-            this.g2_report.TabIndex = 4;
-            this.g2_report.Text = "Enviar reporte";
-            this.g2_report.UseVisualStyleBackColor = true;
-            this.g2_report.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Location = new System.Drawing.Point(539, 333);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(90, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Enviar reporte";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(351, 395);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_3);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.g2_report);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.g2_ligth);
             this.Controls.Add(this.g1_report);
             this.Controls.Add(this.g2_amount);
@@ -255,7 +267,8 @@ namespace Cliente
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox g2_amount;
         private System.Windows.Forms.TextBox g2_ligth;
-        private System.Windows.Forms.Button g2_report;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
