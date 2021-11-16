@@ -46,10 +46,20 @@ namespace Cliente
 
         public ColorLight Receive()
         {
-            byte[] buffer = new byte[1024];
-            s_Client.Receive(buffer);
-            ColorLight colorLight = (ColorLight)Serialization.Deserialize(buffer);
-            return colorLight;
+            ColorLight colorLight = new ColorLight();
+            try
+            {
+                byte[] buffer = new byte[1024];
+                s_Client.Receive(buffer);
+                var response = Serialization.Deserialize(buffer);
+
+                colorLight = (ColorLight)response;
+                return colorLight;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Cliente no permitido");
+            }
         }
 
         public string byte2String(byte[] buffer)

@@ -14,6 +14,7 @@ namespace server
         static int SERVER_PORT = 4404;
         static string IP = "localhost";
         private List<TrafficLight> trafficLights;
+        private ClientList clientList;
 
         IPHostEntry host;
         IPAddress ipAddress;
@@ -25,6 +26,7 @@ namespace server
         public Form1()
         {
             trafficLights = new List<TrafficLight>();
+            clientList = new ClientList();
             InitializeComponent();
             
             dataTrafficLight.DataSource = trafficLights;
@@ -72,11 +74,17 @@ namespace server
 
             try
             {
-                while (true)
+                bool connected = true;
+                while (connected)
                 {
                     buffer = new byte[1024];
                     s_Client.Receive(buffer);
                     trafficLight = (TrafficLight)Serialization.Deserialize(buffer);
+                    if(clientList.clients.FindIndex(x => x.IdClient == trafficLight.ClientId) < 0)
+                    {
+
+                        SendObject(new Exception("Cliente no permitido"));
+                    }
                     int indexTrafficLights = trafficLights.FindIndex(x => x.ClientId == trafficLight.ClientId && x.GroupId == trafficLight.GroupId);
                     if (indexTrafficLights > -1)
                     {
@@ -87,6 +95,7 @@ namespace server
                         trafficLights.Add(trafficLight);
                     }
                 }
+                Thread.ResetAbort();
             }
             catch (SocketException ex)
             {

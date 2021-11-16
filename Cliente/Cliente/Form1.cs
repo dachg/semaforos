@@ -52,7 +52,6 @@ namespace Cliente
                 try
                 {
                     ColorLight color = client.Receive();
-                    //MessageBox.Show(aaa, "Ok");
                     switch (color.GroupId)
                     {
                         case eGroups.group1:
@@ -79,11 +78,15 @@ namespace Cliente
                     MessageBox.Show("Se debe enviar el \"Id cliente\"", "Ok");
                     return;
                 }
+                int maxFails = ((int)g1_amount.Value) * 3;
+                if (((int)g1_ligth.Value) > maxFails)
+                {
+                    g1_ligth.Value = maxFails;
+                }
                 Int32.TryParse(g1_amount.Text, out int amount);
                 Int32.TryParse(g1_ligth.Text, out int ligthFail);
                 trafficLight = new TrafficLight(amount, ligthFail, eGroups.group1, clientId.Text);
                 client.SendObject(trafficLight);
-                //MessageBox.Show("Enviando reporte", "Ok");
             }
             catch(Exception ex)
             {
@@ -101,6 +104,11 @@ namespace Cliente
                 {
                     MessageBox.Show("Se debe enviar el \"Id cliente\"", "Ok");
                     return;
+                }
+                int maxFails = ((int)g2_amount.Value) * 3;
+                if (((int)g2_ligth.Value) > maxFails)
+                {
+                    g2_ligth.Value = maxFails;
                 }
                 Int32.TryParse(g2_amount.Text, out int amount);
                 Int32.TryParse(g2_ligth.Text, out int ligthFail);
@@ -159,6 +167,24 @@ namespace Cliente
                     g2_yellow.BackColor = Color.FromArgb(255, 255, 192);
                     g2_green.BackColor = Color.Green;
                     break;
+            }
+        }
+
+        private void g1_ligth_ValueChanged(object sender, EventArgs e)
+        {
+            int maxFails = ((int)g1_amount.Value) * 3;
+            if(((int)g1_ligth.Value) > maxFails)
+            {
+                g1_ligth.Value = maxFails;
+            }
+        }
+
+        private void g2_ligth_ValueChanged(object sender, EventArgs e)
+        {
+            int maxFails = ((int)g2_amount.Value) * 3;
+            if (((int)g2_ligth.Value) > maxFails)
+            {
+                g2_ligth.Value = maxFails;
             }
         }
     }
