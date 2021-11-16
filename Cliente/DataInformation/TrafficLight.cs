@@ -9,15 +9,17 @@ namespace DataInformation
     [Serializable]
     public class TrafficLight
     {
-        public int numberLigths;
-        public int numberFails;
-        public eGroups groupId;
+        public int NumberLigths { get; set; }
+        public int NumberFails { get; set; }
+        public eGroups GroupId { get; set; }
+        public string ClientId { get; set; }
 
-        public TrafficLight(int numberLigths, int numberFails, eGroups groupId)
+        public TrafficLight(int numberLigths, int numberFails, eGroups groupId, string clientId)
         {
-            this.numberLigths = numberLigths;
-            this.numberFails = numberFails;
-            this.groupId = groupId;
+            this.NumberLigths = numberLigths;
+            this.NumberFails = numberFails;
+            this.GroupId = groupId;
+            this.ClientId = clientId;
         }
     }
 }

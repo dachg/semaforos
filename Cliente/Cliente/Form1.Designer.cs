@@ -35,7 +35,7 @@ namespace Cliente
             this.g2_red = new System.Windows.Forms.Panel();
             this.g2_yellow = new System.Windows.Forms.Panel();
             this.g2_green = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label111 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.g1_amount = new System.Windows.Forms.TextBox();
             this.g1_ligth = new System.Windows.Forms.TextBox();
@@ -47,7 +47,8 @@ namespace Cliente
             this.g2_amount = new System.Windows.Forms.TextBox();
             this.g2_ligth = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.clientId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // g1_red
@@ -98,15 +99,15 @@ namespace Cliente
             this.g2_green.Size = new System.Drawing.Size(50, 50);
             this.g2_green.TabIndex = 1;
             // 
-            // label1
+            // label111
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(209, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Grupo 1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label111.AutoSize = true;
+            this.label111.Location = new System.Drawing.Point(209, 39);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(45, 13);
+            this.label111.TabIndex = 2;
+            this.label111.Text = "Grupo 1";
+            this.label111.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -206,22 +207,29 @@ namespace Cliente
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // button2
+            // label1
             // 
-            this.button2.Location = new System.Drawing.Point(351, 395);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_3);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(279, 397);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Id cliente";
+            // 
+            // clientId
+            // 
+            this.clientId.Location = new System.Drawing.Point(344, 394);
+            this.clientId.Name = "clientId";
+            this.clientId.Size = new System.Drawing.Size(100, 20);
+            this.clientId.TabIndex = 7;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.clientId);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.g2_ligth);
             this.Controls.Add(this.g1_report);
@@ -233,7 +241,7 @@ namespace Cliente
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label111);
             this.Controls.Add(this.g2_green);
             this.Controls.Add(this.g1_green);
             this.Controls.Add(this.g2_yellow);
@@ -256,7 +264,7 @@ namespace Cliente
         private System.Windows.Forms.Panel g2_red;
         private System.Windows.Forms.Panel g2_yellow;
         private System.Windows.Forms.Panel g2_green;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label111;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox g1_amount;
         private System.Windows.Forms.TextBox g1_ligth;
@@ -268,7 +276,8 @@ namespace Cliente
         private System.Windows.Forms.TextBox g2_amount;
         private System.Windows.Forms.TextBox g2_ligth;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox clientId;
     }
 }
 

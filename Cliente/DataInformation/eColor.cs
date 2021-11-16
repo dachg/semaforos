@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace DataInformation
 {
-    public enum eGroups
+    public enum eColor
     {
-        group1 = 1,
-        group2 = 2
+        Red = 1,
+        Yellow = 2,
+        Green = 3
     }
 }
