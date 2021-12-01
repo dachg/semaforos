@@ -11,6 +11,8 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { LoginService } from './services/login-service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ColorLigthService } from './services/color-ligth.service';
+import { TrafficService } from './services/traffic.service';
 
 
 @NgModule({
@@ -18,7 +20,6 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     LoginComponent,
     ManagerComponentComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -26,13 +27,13 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MaterialModule,
     RouterModule.forRoot([
-      { path: 'login', component: LoginComponent },
+      { path: '', component: LoginComponent },
       { path: 'server', component: ManagerComponentComponent}
-    ])
+    ]),
     FormsModule,
     HttpClientModule,
   ],
-  providers: [LoginService],
+  providers: [LoginService, ColorLigthService, TrafficService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
