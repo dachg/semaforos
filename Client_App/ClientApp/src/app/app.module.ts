@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login_component/login.component';
 import { ManagerComponentComponent } from './manager_component/manager-component.component';
+import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { LoginService } from './services/login-service.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -24,6 +25,10 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    RouterModule.forRoot([
+      { path: 'login', component: LoginComponent },
+      { path: 'server', component: ManagerComponentComponent}
+    ])
     FormsModule,
     HttpClientModule,
   ],
