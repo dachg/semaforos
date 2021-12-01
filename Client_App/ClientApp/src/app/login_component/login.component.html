@@ -1,21 +1,26 @@
 <div class="main_login">
   <mat-card class="card">
-    <mat-card-title class="card__title" >Bienvenido</mat-card-title>
+    <mat-card-title class="card__title">Bienvenido</mat-card-title>
     <div class="login">
-        <form class="login__form">
-            <mat-form-field class="form__input" appearance="outline">
-              <mat-label>Usuario</mat-label>
-              <input matInput placeholder="Ingrese el usuario" >
-            </mat-form-field>
-          
-            <mat-form-field class="form__input" appearance="outline">
-              <mat-label>Contraseña</mat-label>
-              <input matInput placeholder="Ingrese la contraseña" >
-            </mat-form-field>
-          </form>
+      <form class="login__form">
+        <mat-form-field class="form__input" appearance="outline">
+          <mat-label>Usuario</mat-label>
+          <input matInput [(ngModel)]="user.email" laceholder="Ingrese el usuario" name="Email">
+        </mat-form-field>
+
+        <mat-form-field class="form__input" appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <input [(ngModel)]="user.password" (keyup.enter)="login()" [type]="hide ? 'password' : 'text'" matInput
+            placeholder="Ingrese la contraseña" name="password">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </form>
     </div>
     <div class="card__button">
-      <button mat-raised-button color="primary">Ingresar</button>
+      <button mat-raised-button color="primary" (click)="login()">Ingresar</button>
     </div>
   </mat-card>
 </div>

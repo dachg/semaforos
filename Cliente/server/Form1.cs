@@ -1,6 +1,9 @@
 ﻿using DataInformation;
+using DataInformation.DB;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Configuration;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -15,6 +18,8 @@ namespace server
         static string IP = "localhost";
         private List<TrafficLight> trafficLights;
         private ClientList clientList;
+        NameValueCollection appSettings;
+        TrafficDb trafficDb;
 
         IPHostEntry host;
         IPAddress ipAddress;
@@ -25,9 +30,12 @@ namespace server
 
         public Form1()
         {
+            appSettings = ConfigurationManager.AppSettings;
+            trafficDb = new TrafficDb(appSettings.Get("DbInstance"));
             trafficLights = new List<TrafficLight>();
             clientList = new ClientList();
             InitializeComponent();
+
             
             dataTrafficLight.DataSource = trafficLights;
 
@@ -85,6 +93,9 @@ namespace server
                         SendObject(new Exception("Cliente no permitido"));
                         continue;
                     }
+                    //trafficLight.Id = trafficLight.ClientId + trafficLight.GroupId;
+                    trafficDb.SetTraffic(trafficLight);
+
                     int indexTrafficLights = trafficLights.FindIndex(x => x.ClientId == trafficLight.ClientId && x.GroupId == trafficLight.GroupId);
                     if (indexTrafficLights > -1)
                     {
@@ -129,10 +140,14 @@ namespace server
             colorLight.GroupId = group;
             colorLight.ClientId = "";
             SendObject(colorLight);
+
+            colorLight.Id = colorLight.ClientId + colorLight.GroupId;
+            trafficDb.SetColor(colorLight);
         }
 
         private void timerLight_Tick(object sender, EventArgs e)
         {
+            trafficLights = trafficDb.GetTraffics();
             dataTrafficLight.DataSource = typeof(List<TrafficLight>);
             dataTrafficLight.DataSource = trafficLights;
             dataTrafficLight.Update();

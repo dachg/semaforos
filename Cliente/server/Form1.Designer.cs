@@ -63,12 +63,11 @@ namespace server
             this.numberFailsDataGridViewTextBoxColumn,
             this.groupIdDataGridViewTextBoxColumn});
             this.dataTrafficLight.DataSource = this.trafficLightBindingSource;
-            this.dataTrafficLight.Location = new System.Drawing.Point(414, 93);
-            this.dataTrafficLight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataTrafficLight.Location = new System.Drawing.Point(310, 76);
             this.dataTrafficLight.Name = "dataTrafficLight";
             this.dataTrafficLight.ReadOnly = true;
             this.dataTrafficLight.RowHeadersWidth = 51;
-            this.dataTrafficLight.Size = new System.Drawing.Size(592, 278);
+            this.dataTrafficLight.Size = new System.Drawing.Size(444, 226);
             this.dataTrafficLight.TabIndex = 0;
             // 
             // ClientId
@@ -115,10 +114,9 @@ namespace server
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 17);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(13, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(190, 21);
+            this.label2.Size = new System.Drawing.Size(120, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Seleccione el grupo";
             // 
@@ -126,37 +124,33 @@ namespace server
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(17, 92);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(13, 75);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 17);
+            this.label3.Size = new System.Drawing.Size(116, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Seleccione el color";
             // 
             // comboGroup
             // 
             this.comboGroup.FormattingEnabled = true;
-            this.comboGroup.Location = new System.Drawing.Point(53, 47);
-            this.comboGroup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboGroup.Location = new System.Drawing.Point(40, 38);
             this.comboGroup.Name = "comboGroup";
-            this.comboGroup.Size = new System.Drawing.Size(204, 24);
+            this.comboGroup.Size = new System.Drawing.Size(154, 21);
             this.comboGroup.TabIndex = 6;
             // 
             // comboColor
             // 
             this.comboColor.FormattingEnabled = true;
-            this.comboColor.Location = new System.Drawing.Point(53, 119);
-            this.comboColor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboColor.Location = new System.Drawing.Point(40, 97);
             this.comboColor.Name = "comboColor";
-            this.comboColor.Size = new System.Drawing.Size(204, 24);
+            this.comboColor.Size = new System.Drawing.Size(154, 21);
             this.comboColor.TabIndex = 7;
             // 
             // buttonSend
             // 
-            this.buttonSend.Location = new System.Drawing.Point(249, 343);
-            this.buttonSend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSend.Location = new System.Drawing.Point(187, 279);
             this.buttonSend.Name = "buttonSend";
-            this.buttonSend.Size = new System.Drawing.Size(100, 28);
+            this.buttonSend.Size = new System.Drawing.Size(75, 23);
             this.buttonSend.TabIndex = 8;
             this.buttonSend.Text = "Enviar";
             this.buttonSend.UseVisualStyleBackColor = true;
@@ -174,19 +168,19 @@ namespace server
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.comboColor);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(63, 152);
+            this.panel1.Location = new System.Drawing.Point(47, 124);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(286, 164);
+            this.panel1.Size = new System.Drawing.Size(215, 134);
             this.panel1.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(397, 444);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(298, 361);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(230, 16);
+            this.label1.Size = new System.Drawing.Size(181, 13);
             this.label1.TabIndex = 8;
             this.label1.Text = "Todos los derechos reservados";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -195,10 +189,9 @@ namespace server
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Franklin Gothic Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(59, 3);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(44, 2);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 25);
+            this.label4.Size = new System.Drawing.Size(69, 21);
             this.label4.TabIndex = 10;
             this.label4.Text = "Servidor";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -207,24 +200,24 @@ namespace server
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(414, 32);
+            this.panel2.Location = new System.Drawing.Point(310, 26);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 34);
+            this.panel2.Size = new System.Drawing.Size(151, 28);
             this.panel2.TabIndex = 11;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 473);
+            this.ClientSize = new System.Drawing.Size(800, 384);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonSend);
             this.Controls.Add(this.dataTrafficLight);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Server";
             ((System.ComponentModel.ISupportInitialize)(this.dataTrafficLight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trafficLightBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);

@@ -78,13 +78,13 @@ namespace Cliente
                     MessageBox.Show("Se debe enviar el \"Id cliente\"", "Ok");
                     return;
                 }
-                int maxFails = ((int)g1_amount.Value) * 3;
-                if (((int)g1_ligth.Value) > maxFails)
+                int maxFails = ((int)g1Amount.Value) * 3;
+                if (((int)g1Ligth.Value) > maxFails)
                 {
-                    g1_ligth.Value = maxFails;
+                    g1Ligth.Value = maxFails;
                 }
-                Int32.TryParse(g1_amount.Text, out int amount);
-                Int32.TryParse(g1_ligth.Text, out int ligthFail);
+                Int32.TryParse(g1Amount.Text, out int amount);
+                Int32.TryParse(g1Ligth.Text, out int ligthFail);
                 trafficLight = new TrafficLight(amount, ligthFail, eGroups.group1, clientId.Text);
                 client.SendObject(trafficLight);
             }

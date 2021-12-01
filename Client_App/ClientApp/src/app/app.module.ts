@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login_component/login.component';
 import { ManagerComponentComponent } from './manager_component/manager-component.component';
+import { FormsModule } from '@angular/forms';
+import { LoginService } from './services/login-service.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -21,8 +24,10 @@ import { ManagerComponentComponent } from './manager_component/manager-component
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

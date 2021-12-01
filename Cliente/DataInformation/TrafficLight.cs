@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,10 +10,21 @@ namespace DataInformation
     [Serializable]
     public class TrafficLight
     {
-        public int NumberLigths { get; set; }
-        public int NumberFails { get; set; }
-        public eGroups GroupId { get; set; }
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+
         public string ClientId { get; set; }
+
+        public eGroups GroupId { get; set; }
+
+        public int NumberFails { get; set; }
+
+        public int NumberLigths { get; set; }
+
+        public TrafficLight()
+        {
+
+        }
 
         public TrafficLight(int numberLigths, int numberFails, eGroups groupId, string clientId)
         {

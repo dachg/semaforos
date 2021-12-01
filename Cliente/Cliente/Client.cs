@@ -56,7 +56,7 @@ namespace Cliente
                 colorLight = (ColorLight)response;
                 return colorLight;
             }
-            catch (Exception ex)
+            catch
             {
                 throw new Exception("Cliente no permitido");
             }
